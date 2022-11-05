@@ -10,7 +10,7 @@ def fact(n):
 def fib(n):        #calculates the term using the recursive formuala of fibonacci series
   if n <= 1:
      return n
-  return fib(n - 1) + fib(n - 2);
+  return fib(n - 1) + fib(n - 2)
 
 def nthFib(n):
 

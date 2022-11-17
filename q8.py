@@ -17,18 +17,27 @@ def linearSearch(l, ele):
             return i
     else:
         return -1
-
-#needs work 
+ 
 def isNumeric(l):
+    isNumeric=False
     for i in l:
-        if i not in [0,1,2,3,4,5,6,7,8,9]:
-            return False
+        if str(i).isdigit() ==False:
             break
     else:
-        return True
+        isNumeric=True
+    return isNumeric 
 
+
+def isString(l):
+    isString = True
+    for i in l:
+        if str(i).isdigit() == True:
+            isString=False
+            break
+    return isString
 
 def oddValuesCount(l):
+    count=0
     for i in l:
         if i % 2 != 0:
             count += 1
@@ -62,6 +71,7 @@ def commonElements(l, m):
 
 
 def menu():
+
    print(
     ''' \t0.Exit
         1.Check if all elements in list are numbers or not .
@@ -72,6 +82,7 @@ def menu():
         6.Remove the specified element from the list.
         7.Sort the list in descending order.
         8.accept 2 lists and find the common members in them.''')
+   print("-----------------------------------------------------------------")
 
 run = True
 while (run):
@@ -84,12 +95,13 @@ while (run):
 
         case 2:
             if (isNumeric(l)):
+                print("List is all numeric.")
                 print(oddValuesCount(l))
             else:
                 print("Please enter a numeric list.")
 
         case 3:
-            if not (isNumeric(l)):
+            if isString(l):
                 print(largestString(l))
             else:
                 print("Please enter a list of strings.")

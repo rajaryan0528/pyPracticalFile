@@ -7,7 +7,7 @@ def fact(n):
     return f
 
 
-def fib(n):        #calculates the term using the recursive formuala of fibonacci series
+def fib(n):        #calculates the term using the recursive formula of fibonacci series
   if n <= 1:
      return n
   return fib(n - 1) + fib(n - 2)

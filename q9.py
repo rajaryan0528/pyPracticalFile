@@ -14,20 +14,18 @@ def nameOfStu(data):
     temp = ()
     percentData = ()  # nested tuple
     for student in data:
-       temp=(data[student],percentage(data[student]))     #([marks],percent)
+       temp=(student,percentage(data[student]))     #([marks],percent)
        percentData+=temp,
     del temp
 
     max=0
-    l=[]
+    s=""
     for i in range(4):
        if percentData[i][1]>max:
         max=percentData[i][1]
-        l=percentData[i][0]   #marks of student whose percentage is the highest
+        s=percentData[i][0]   #marks of student whose percentage is the highest
 
-    for k in data:
-        if data[k]==l:
-           return k
+    return s
 
 
 def main():

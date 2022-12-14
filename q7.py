@@ -62,12 +62,12 @@ def isPalindrome(s):
 
 i=1
 def main():
-    s = input("Enter a string :")
     run=True
     while(run):
       menu()
       i = int(input())
-      #valid only  from python 3.10 onwards ,replacement of switch
+      if i!=0 and i!=2:
+         s = input("Enter a string :")
       match i:
         case 0:
           print("Exiting :)")
@@ -77,12 +77,13 @@ def main():
               print("The length of string is :", length(s))
 
         case 2:
-           print("Resultant string :",replaceVowels(s))
-
-        case 3:
             t=eval(input("Enter three strings as a tuple:"))
             s=max(t[0],t[1],t[2])
             print("Maximum of the entered three strings is :", s)
+           
+
+        case 3:
+             print("Resultant string :",replaceVowels(s))
 
         case 4:
             print("Number of words in the given string is :",wordCount(s))

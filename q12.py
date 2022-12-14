@@ -4,7 +4,7 @@ and displays a histogram
 '''
 import matplotlib.pyplot as plt
 
-x = eval(input("Enter a list on integers :"))
+x = eval(input("Enter a list of integers :"))
 plt.hist(x)
 plt.title("Question 12")
 plt.show()

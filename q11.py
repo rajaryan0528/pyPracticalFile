@@ -7,9 +7,9 @@ b.Sort the elements using bubble sort,insertion sort,selection sort
 
 
 def linearSearch(l, key):
-  for i in l:
-    if (i == key):
-        return 0
+  for i in range(len(l)):
+    if (l[i] == key):
+        return i+1
   else:
     return -1
 
@@ -20,7 +20,7 @@ def binarySearch(l, key):
     while (low <= high):
         mid = (low+high)//2
         if (l[mid] == key):
-           return 0
+           return mid+1
         elif (l[mid] < key):
             low = mid+1
         else:
@@ -81,19 +81,19 @@ def menu():
     print("3.Bubble Sort")
     print("4.Linear Search")
     print("5.Binary Search")
-    print("0 - Element present -1 - Element not present")
+    print("-1 - Element not present")
 
-run = True
-while (run):
+
+while (True):
     menu()
-    i = int(input())
-    names = eval(input("Enter the student names :"))
+    i = int(input("Your choice : "))
+    if i !=0:
+     names = eval(input("Enter the student names :"))
     #valid only  from python 3.10 onwards ,replacement of switch
     match i:
         case 0:
           print("Exiting :)")
-          run = False
-
+          break
         case 1:
             print("The sorted array is :",selectionSort(names))
 
@@ -105,9 +105,9 @@ while (run):
 
         case 4:
             key = input("Enter the name to be searched for :")
-            print(linearSearch(names, key))
+            print("Found at : ",linearSearch(names, key))
         case 5:
             key = input("Enter the name to be searched for :")
-            print(binarySearch(names, key))
+            print("Found at : ",binarySearch(names, key))
         case default:
             print("Wrong input :)")

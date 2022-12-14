@@ -12,6 +12,6 @@ def area(a,b,c):
 a=int(input("Enter the length of the side 1 :"))
 b=int(input("Enter the length of the side 2 :"))
 c=int(input("Enter the length of the side 3 :"))
-
+assert a+b>c and b+c>a and c+a>b,"The sum of the length of any two sides should be  greater than the third side."
 t=area(a,b,c)
 print("Area of the triangle is :",t[0],"\n","Perimeter of the triangle is :",t[1])

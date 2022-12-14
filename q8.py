@@ -12,11 +12,12 @@ h)accept 2 lists and find the common members in them.
 
 
 def linearSearch(l, ele):
-    for i in l:
-        if (i == ele):
-            return i
-    else:
-        return -1
+    for i in range(len(l)):
+        if l[i] == ele:
+            print(i+1)
+            return i+1
+            break
+    return -1
  
 def isNumeric(l):
     isNumeric=False
@@ -48,19 +49,10 @@ def largestString(l):
     return max(l)
 
 
+
 def reverseList(l):
     l.reverse()
     return l
-
-
-def search(l, ele):
-    return linearSearch(l, ele)
-
-
-def removeEle(l, ele):
-    l.remove(ele)    # no return value
-    return l
-
 
 def sort(l):
     l.sort(reverse=True)
@@ -88,7 +80,8 @@ run = True
 while (run):
     menu()
     i = int(input("Enter your choice :"))
-    l = eval(input("Enter a list :"))
+    if i!=0:
+       l = eval(input("Enter a list :"))
     match i:
         case 1:
             print(isNumeric(l))
@@ -110,12 +103,13 @@ while (run):
             print(reverseList(l))
 
         case 5:
-            ele = print("Enter the element :")
-            print(search(l, ele))
+            ele = int(input("Enter the element :"))
+            print("Found at : ",linearSearch(l, ele))
 
         case 6:
-            ele = print("Enter the element :")
-            print(removeEle(l, ele))
+            ele = int(input("Enter the element :"))
+            l.remove(ele)
+            print(l)
 
         case 7:
             print(reverseList(l))

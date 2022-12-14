@@ -2,7 +2,7 @@
 another file file2. Alternative lines copied should be the odd numbered lines.
 UseException'''
 
-
+# count starts from 0 , 0  has been considered even
 def copyAlternativeLines(f1,f2):
 
     try:

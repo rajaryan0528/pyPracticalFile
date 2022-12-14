@@ -11,7 +11,7 @@ tuple2=(11,13,15)
 t3=()
 for i in tuple1:
     if i%2==0:
-        t3+=i,
+        t3+=i,     #t3=t3+(i,) why a diff syntax
 print("Tupple with even numbers present :",t3)
 t4=tuple1+tuple2
 print("Adding tuple2 with tuple1",t4)

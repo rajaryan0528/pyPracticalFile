@@ -3,7 +3,7 @@ Write a function that takes a sentence as input from the user
 and calculates the frequency of each letter.Use a variable of dictionary type to
 maintain the count
 '''
-
+import json
 def freqOfLetters(s):
     count={}    #letter:count
     for letter in s :
@@ -14,7 +14,7 @@ def freqOfLetters(s):
     return count
 def main():
  sentence=input("Enter a sentence :")
- print(freqOfLetters(sentence))
+ print(json.dumps(freqOfLetters(sentence),indent=4))
 
 if __name__=="__main__":
     main()

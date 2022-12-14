@@ -1,10 +1,14 @@
-def isNumeric(l):
-    for i in l:
-        if i not in [1,2,3,4,5,6,7,8,9,0]:
-            print("0")
-            break
+def linearSearch(l, ele):
+    for i in range(len(l)):
+        if (l[i] == ele):
+            return i+1
     else:
-        print("1")
-    
+        return -1
 
-print(isNumeric([44]))
+
+def search(l, ele):
+    pos=linearSearch(l, ele)
+    return pos
+  
+l=[1,2,3,4]
+print(search(l,2))

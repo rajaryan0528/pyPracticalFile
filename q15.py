@@ -13,6 +13,9 @@ class Student:
         self.marks = marks
         self.calcAvg()
 
+    def __del__(self):
+        print('Destructor called. Student is deleted.')
+
     def calcAvg(self):
         Student.avgScores.append((self.name, sum(self.marks)/len(self.marks)))
         print(Student.avgScores)
@@ -27,9 +30,16 @@ class Student:
                 name = i[0]
         return (maxAvg, name)
 
-
-students = [Student("Raj", [23, 34, 32]), Student(
-    "Qwe", [45, 34, 32]), Student("Ary", [23, 100, 32])]
+n=int(input("Enter the number of students: "))
+students=[]
+name=""
+marks=[]
+for i in range(n):
+    print("Enter the data for student ",i+1," : ")
+    name=input("Enter name :")
+    marks=eval(input("His marks in three subjects :"))
+    student=Student(name,marks)
+    students.append(student)
 print("Name of the student with highest average marks :",
       Student.maxAvgMarks()[1])
 print("The student's average marks :", Student.maxAvgMarks()[0])

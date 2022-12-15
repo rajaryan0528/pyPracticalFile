@@ -2,7 +2,7 @@
 #the factorial function created in question4.
 # 1–x2/2!+x4/4!–x6/6!+...xn/n!
 
-from q3 import fact
+from q3Module import fact
 from math import *
 
 def seriesSum(n,x):

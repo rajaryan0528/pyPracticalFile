@@ -42,7 +42,6 @@ def selectionSort(l):
 
     for i in range(len(l)):
         min_index = i
-
         for j in range(i + 1, len(l)):
             if l[j] < l[min_index]:
                 min_index = j
@@ -51,16 +50,14 @@ def selectionSort(l):
 
 
 def insertionSort(l):
-
-
-    for i in range(1,len(l)):
-        key=l[i]
-        j=i-1
-        while(j>=0 and key < l[j]):
-            l[j+1]=l[j]
-            j-=1
-        l[j+1] = key
-
+    for i in range(1,len(l)-1):
+        j=i+1
+        while(j>0):
+            if(l[j]>l[j-1]):
+               l[j-1],l[j]=l[j],l[j-1]
+               j-=1
+            else:
+                break
     return l
 
 def selectionSort(l):
